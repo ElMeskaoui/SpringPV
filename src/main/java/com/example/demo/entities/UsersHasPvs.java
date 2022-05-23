@@ -1,22 +1,31 @@
 package com.example.demo.entities;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class VilleDeNaiss {
+@AllArgsConstructor
+
+public class UsersHasPvs {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nom;
 
-    @OneToMany(mappedBy ="VilleDeNaiss" )
-    private Collection<DataParties> dataParties;
+    @ManyToOne(targetEntity = Users.class)
+    private Users users;
+
+    @ManyToOne(targetEntity = Pvs.class)
+    private Pvs pvs;
+
+    @ManyToOne(targetEntity = Traited.class)
+    private Traited traited;
+
+
+
 }

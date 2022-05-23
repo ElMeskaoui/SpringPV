@@ -22,8 +22,13 @@ public class Users {
     private String password;
     @ManyToOne
     private Roles roles;
-    @OneToMany(mappedBy = "UserHasPlaints")
-    private Collection<Users> users;
+
+    @OneToMany(targetEntity = UserHasPlaints.class, mappedBy = "users")
+    private Collection<UserHasPlaints> userHasPlaints;
+
+
+    @OneToMany(targetEntity = UsersHasPvs.class, mappedBy = "users")
+    private Collection<UsersHasPvs> usersHasPvs;
 
 
 

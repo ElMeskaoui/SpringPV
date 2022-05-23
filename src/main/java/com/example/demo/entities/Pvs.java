@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -23,4 +24,9 @@ public class Pvs {
     private TypePoliceJudics typePoliceJudics;
     @ManyToOne
     private TypeSourcePvs typeSourcePvs;
+    @OneToMany(targetEntity = UsersHasPvs.class, mappedBy = "pvs")
+    private Collection<UsersHasPvs> usersHasPvs;
+
+    @OneToMany(targetEntity = PvsHasDataParties.class, mappedBy = "pvs")
+    private Collection<PvsHasDataParties> pvsHasDataParties;
 }

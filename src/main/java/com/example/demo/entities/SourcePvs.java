@@ -9,14 +9,15 @@ import java.util.Collection;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class VilleDeNaiss {
+@AllArgsConstructor
+
+public class SourcePvs {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
 
-    @OneToMany(mappedBy ="VilleDeNaiss" )
-    private Collection<DataParties> dataParties;
+    @OneToMany(mappedBy = "SourcePvs")
+    private Collection<Pvs> pvsCollection;
 }

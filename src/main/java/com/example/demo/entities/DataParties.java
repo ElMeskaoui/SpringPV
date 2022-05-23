@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -50,6 +51,10 @@ public class DataParties {
     @ManyToOne
     @JoinColumn(name = "ProvinceID")
     private Province province;
+    @ManyToOne
     @JoinColumn(name = "NationaliteID")
     private Nationalite nationalite;
+
+    @OneToMany(targetEntity = PvsHasDataParties.class, mappedBy = "dataParties")
+    private Collection<PvsHasDataParties> pvsHasDataParties;
 }

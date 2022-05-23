@@ -18,6 +18,6 @@ public class TypePlaints {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
-    @OneToMany(mappedBy = "TypePlaints")
+    @OneToMany(mappedBy = "typePlaints")
     private Collection<Plaint> plaints;
 }

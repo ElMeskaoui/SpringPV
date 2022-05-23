@@ -5,18 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VilleDeNaiss {
+
+public class PvsHasDataParties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nom;
 
-    @OneToMany(mappedBy ="VilleDeNaiss" )
-    private Collection<DataParties> dataParties;
+    @ManyToOne(targetEntity = Pvs.class)
+    private Pvs pvs;
+
+    @ManyToOne(targetEntity = DataParties.class)
+    private DataParties dataParties;
 }
