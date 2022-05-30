@@ -18,6 +18,6 @@ public class SourcePvs {
     private int id;
     private String nom;
 
-    @OneToMany(mappedBy = "SourcePvs")
+    @OneToMany(targetEntity = Pvs.class, mappedBy = "sourcePvs")
     private Collection<Pvs> pvsCollection;
 }

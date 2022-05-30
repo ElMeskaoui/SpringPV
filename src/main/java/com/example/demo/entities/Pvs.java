@@ -20,13 +20,22 @@ public class Pvs {
     private Date datePvs;
     private Date heureRealisation;
     private int contreInnconue;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = TypePoliceJudics.class)
     private TypePoliceJudics typePoliceJudics;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = TypeSourcePvs.class)
     private TypeSourcePvs typeSourcePvs;
+
+    @ManyToOne(targetEntity = SourcePvs.class)
+    private SourcePvs sourcePvs;
+
     @OneToMany(targetEntity = UsersHasPvs.class, mappedBy = "pvs")
     private Collection<UsersHasPvs> usersHasPvs;
 
     @OneToMany(targetEntity = PvsHasDataParties.class, mappedBy = "pvs")
     private Collection<PvsHasDataParties> pvsHasDataParties;
+
+    @OneToMany(targetEntity = PvsReponses.class, mappedBy = "pvs")
+    private Collection<PvsReponses> pvsReponses;
 }

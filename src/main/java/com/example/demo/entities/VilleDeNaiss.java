@@ -17,6 +17,6 @@ public class VilleDeNaiss {
     private int id;
     private String nom;
 
-    @OneToMany(mappedBy ="VilleDeNaiss" )
+    @OneToMany(targetEntity = DataParties.class, mappedBy ="villeDeNaiss" )
     private Collection<DataParties> dataParties;
 }

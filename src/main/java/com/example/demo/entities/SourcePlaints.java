@@ -17,6 +17,7 @@ public class SourcePlaints {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
-    @OneToMany(mappedBy = "SourcePlaints")
+
+    @OneToMany(targetEntity = Plaint.class, mappedBy = "sourcePlaints")
     private Collection<Plaint> plaints;
 }

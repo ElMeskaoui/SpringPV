@@ -4,9 +4,9 @@ package com.example.demo.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.type.descriptor.sql.TinyIntTypeDescriptor;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -24,10 +24,22 @@ public class Plaint {
     private Date dateFaits;
     private String emplaceFaits;
     private String sujetPlaints;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = TypePlaints.class)
     @JoinColumn(name = "TypePlaintID")
     private TypePlaints typePlaints;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = SourcePlaints.class)
     @JoinColumn(name = "SourcePlaintID")
     private SourcePlaints sourcePlaints;
+
+    @OneToMany(targetEntity = UserHasPlaints.class, mappedBy = "plaint")
+    private Collection<UserHasPlaints> userHasPlaints;
+
+    @OneToMany(targetEntity = PlaintHasDataParties.class, mappedBy = "plaint")
+    private Collection<PlaintHasDataParties> plaintHasDataParties;
+
+    @OneToMany(targetEntity = PvsReponses.class, mappedBy = "plaint")
+    private Collection<PvsReponses> pvsReponses;
+
 }

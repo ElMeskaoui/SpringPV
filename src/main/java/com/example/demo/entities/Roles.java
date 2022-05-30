@@ -18,8 +18,9 @@ public class Roles {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
         private String nom;
-        @OneToMany(mappedBy = "Users")
-        private Collection<Roles> roles;
+
+        @OneToMany(targetEntity = Users.class, mappedBy = "roles")
+        private Collection<Users> users;
 
 
 }

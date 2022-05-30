@@ -20,7 +20,8 @@ public class Users {
     private String nom;
     private String email;
     private String password;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = Roles.class)
     private Roles roles;
 
     @OneToMany(targetEntity = UserHasPlaints.class, mappedBy = "users")

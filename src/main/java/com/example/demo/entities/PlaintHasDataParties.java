@@ -8,10 +8,10 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 
-public class UserHasPlaints {
+public class PlaintHasDataParties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,9 +19,6 @@ public class UserHasPlaints {
     @ManyToOne(targetEntity = Plaint.class)
     private Plaint plaint;
 
-    @ManyToOne(targetEntity = Users.class)
-    private Users users;
-
-    @ManyToOne(targetEntity = Traited.class)
-    private Traited traited;
+    @ManyToOne(targetEntity = DataParties.class)
+    private DataParties dataParties;
 }

@@ -18,6 +18,9 @@ public class TypePoliceJudics {
     private int id;
     private String nom;
 
-    @OneToMany(mappedBy = "TypePoliceJudics")
+    @OneToMany(targetEntity = PvsReponses.class, mappedBy = "typePoliceJudics")
     private Collection<PvsReponses> pvsReponses;
+
+    @OneToMany(targetEntity = Pvs.class, mappedBy = "typePoliceJudics")
+    private  Collection<Pvs> pvs;
 }

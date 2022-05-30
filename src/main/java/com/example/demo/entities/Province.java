@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Data
@@ -20,5 +18,8 @@ public class Province {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
+
+    @OneToMany(targetEntity = DataParties.class, mappedBy = "province")
+    private Collection<DataParties> dataParties;
 
 }

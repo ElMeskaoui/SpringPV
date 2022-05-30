@@ -18,9 +18,9 @@ public class TypeSourcePvs {
     private int id;
     private String nom;
 
-    @OneToMany(mappedBy = "TypeSourcePvs")
+    @OneToMany(targetEntity = Pvs.class, mappedBy = "typeSourcePvs")
     private Collection<Pvs> pvsCollection;
 
-    @OneToMany(mappedBy = "TypeSourcePvs")
+    @OneToMany(targetEntity = PvsReponses.class, mappedBy = "typeSourcePvs")
     private Collection<PvsReponses> pvsReponsesCollection;
 }

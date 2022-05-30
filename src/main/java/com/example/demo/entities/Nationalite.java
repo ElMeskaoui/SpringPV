@@ -17,6 +17,6 @@ public class Nationalite {
     private int id;
     private String nom;
 
-    @OneToMany(mappedBy = "Nationalite")
+    @OneToMany(targetEntity = DataParties.class, mappedBy = "nationalite")
     private Collection<DataParties> dataParties;
 }

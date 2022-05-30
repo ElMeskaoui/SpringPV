@@ -33,28 +33,38 @@ public class DataParties {
     private String NumFinan;
     private Date DateNaiss;
     private String DataPersonnecol;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = PersonneMorales.class)
     @JoinColumn(name = "PersonneMoraleID")
     private PersonneMorales personneMorales;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = Pays.class)
     @JoinColumn(name = "PaysID")
     private Pays pays;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = TypeCarteIdents.class)
     @JoinColumn(name = "TypeCarteIdentsID")
     private TypeCarteIdents typeCarteIdents;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = SituationFamill.class)
     @JoinColumn(name = "SituationFamillID")
     private SituationFamill situationFamill;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = VilleDeNaiss.class)
     @JoinColumn(name = "VilleDeNaissID")
     private VilleDeNaiss villeDeNaiss;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = Province.class)
     @JoinColumn(name = "ProvinceID")
     private Province province;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = Nationalite.class)
     @JoinColumn(name = "NationaliteID")
     private Nationalite nationalite;
 
     @OneToMany(targetEntity = PvsHasDataParties.class, mappedBy = "dataParties")
     private Collection<PvsHasDataParties> pvsHasDataParties;
+
+    @OneToMany(targetEntity = PlaintHasDataParties.class, mappedBy = "dataParties")
+    private Collection<PlaintHasDataParties> plaintHasDataParties;
 }

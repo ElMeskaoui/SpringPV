@@ -20,8 +20,21 @@ public class PvsReponses {
     private Date datePvs;
     private Date heureRealisation;
     private int contreInnconue;
-    @ManyToOne
+
+    @ManyToOne(targetEntity = TypePoliceJudics.class)
     @JoinColumn(name = "typePoliceJudicID")
-    private TypePoliceJudics typepolicejudics;
+    private TypePoliceJudics typePoliceJudics;
+
+    @ManyToOne(targetEntity = TypeSourcePvs.class)
+    @JoinColumn(name = "TypeSourcePvsID")
+    private TypeSourcePvs typeSourcePvs;
+
+    @ManyToOne(targetEntity = Plaint.class)
+    @JoinColumn(name = "PlaintID")
+    private Plaint plaint;
+
+    @ManyToOne(targetEntity = Pvs.class)
+    @JoinColumn(name = "PvsID")
+    private Pvs pvs;
 
 }
