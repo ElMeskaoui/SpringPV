@@ -35,14 +35,19 @@ public class TypePlaintsController {
         return typePlaintsService.saveTypePlaints(typePlaints);
     }
 
+    @PostMapping("/addTypesPlaints")
+    public List<TypePlaints> addProducts(@RequestBody List<TypePlaints> typePlaints) {
+        return typePlaintsService.saveTypesPlaints(typePlaints);
+    }
+
 
     // Update
-    @PutMapping("/update")
+    @PutMapping("/updateTypePlaints")
     public TypePlaints updateTypePlaints(@RequestBody TypePlaints typePlaints) {
         return typePlaintsService.updateTypePlaints(typePlaints);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteTypePlaints/{id}")
     public String deleteTypePlaints(@PathVariable int id) {
         return typePlaintsService.deleteTypePlaints(id);
     }

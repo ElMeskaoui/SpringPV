@@ -35,6 +35,12 @@ public class TypePlaintsService {
     }
 
 
+    // Save a list of TypePlaints
+    public List<TypePlaints> saveTypesPlaints(List<TypePlaints> typePlaints) {
+        return typePlaintsRepository.saveAll(typePlaints);
+    }
+
+
     // Delete method
     public String deleteTypePlaints(int id) {
         typePlaintsRepository.deleteById(id);
