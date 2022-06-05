@@ -44,7 +44,7 @@ public class TypePlaintsService {
     // Delete method
     public String deleteTypePlaints(int id) {
         typePlaintsRepository.deleteById(id);
-        return "type plaint removed !! " + id;
+        return "Type plaint removed ! " + id;
     }
 
     // Update method
