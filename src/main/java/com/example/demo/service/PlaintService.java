@@ -41,7 +41,7 @@ public class PlaintService {
     // Delete method
     public String deletePlaint(int id) {
         PlaintRepository.deleteById(id);
-        return " Plaint removed ! " + id;
+        return " Plaint " + id + " removed ! ";
     }
 
     // Update method
