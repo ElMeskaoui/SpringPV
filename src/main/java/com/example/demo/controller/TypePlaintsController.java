@@ -36,7 +36,7 @@ public class TypePlaintsController {
     }
 
     @PostMapping("/addTypesPlaints")
-    public List<TypePlaints> addProducts(@RequestBody List<TypePlaints> typePlaints) {
+    public List<TypePlaints> addTypesPlaints(@RequestBody List<TypePlaints> typePlaints) {
         return typePlaintsService.saveTypesPlaints(typePlaints);
     }
 
