@@ -25,8 +25,8 @@ public class TypePlaintsService {
     }
 
     // Get type's plaint by Name
-    public TypePlaints getTypePlaintsByName(String name) {
-        return typePlaintsRepository.findByName(name);
+    public TypePlaints getTypePlaintsByNom(String nom) {
+        return typePlaintsRepository.findByNom(nom);
     }
 
 
@@ -52,7 +52,7 @@ public class TypePlaintsService {
     // Update method
     public TypePlaints updateTypePlaints(TypePlaints typePlaints) {
         TypePlaints existingTypePlaints = typePlaintsRepository.findById(typePlaints.getId()).orElse(null);
-        existingTypePlaints.setName(typePlaints.getName());
+        existingTypePlaints.setNom(typePlaints.getNom());
         return typePlaintsRepository.save(existingTypePlaints);
     }
 }

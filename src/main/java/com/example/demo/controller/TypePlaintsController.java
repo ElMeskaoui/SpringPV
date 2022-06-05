@@ -24,9 +24,9 @@ public class TypePlaintsController {
         return typePlaintsService.getTypePlaintsById(id);
     }
 
-    @GetMapping("/typeplaints/{name}")
-    public TypePlaints findTypePlaintsByName(@PathVariable String name) {
-        return typePlaintsService.getTypePlaintsByName(name);
+    @GetMapping("/typeplaints/{nom}")
+    public TypePlaints findTypePlaintsByNom(@PathVariable String nom) {
+        return typePlaintsService.getTypePlaintsByNom(nom);
     }
 
     // POST
