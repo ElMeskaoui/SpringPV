@@ -1,4 +1,5 @@
 package com.example.demo.controller;
+
 import com.example.demo.entities.Plaint;
 import com.example.demo.service.PlaintService;
 import org.springframework.beans.factory.annotation.Autowired;
