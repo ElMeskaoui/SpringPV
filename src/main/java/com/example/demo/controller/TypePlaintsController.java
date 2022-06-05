@@ -47,6 +47,7 @@ public class TypePlaintsController {
         return typePlaintsService.updateTypePlaints(typePlaints);
     }
 
+    // Delete
     @DeleteMapping("/deleteTypePlaints/{id}")
     public String deleteTypePlaints(@PathVariable int id) {
         return typePlaintsService.deleteTypePlaints(id);
