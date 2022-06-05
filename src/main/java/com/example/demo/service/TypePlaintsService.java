@@ -14,17 +14,19 @@ public class TypePlaintsService {
     private TypePlaintsRepository typePlaintsRepository;
 
     // GET methods
-
+    // Get a list of types' plaints
     public List<TypePlaints> getTypePlaints() {
         return typePlaintsRepository.findAll();
     }
 
+    // Get type's plaint by ID
     public TypePlaints getTypePlaintsById(int id) {
         return typePlaintsRepository.findById(id).orElse(null);
     }
 
-    public TypePlaints getTypePlaintsByName(String name) {
-        return typePlaintsRepository.findByName(name);
+    // Get type's plaint by Name
+    public TypePlaints getTypePlaintsByNom(String nom) {
+        return typePlaintsRepository.findByNom(nom);
     }
 
 
@@ -44,13 +46,13 @@ public class TypePlaintsService {
     // Delete method
     public String deleteTypePlaints(int id) {
         typePlaintsRepository.deleteById(id);
-        return "type plaint removed !! " + id;
+        return " Type plaint " + id + " removed ! ";
     }
 
     // Update method
     public TypePlaints updateTypePlaints(TypePlaints typePlaints) {
         TypePlaints existingTypePlaints = typePlaintsRepository.findById(typePlaints.getId()).orElse(null);
-        existingTypePlaints.setName(typePlaints.getName());
+        existingTypePlaints.setNom(typePlaints.getNom());
         return typePlaintsRepository.save(existingTypePlaints);
     }
 }
