@@ -30,11 +30,13 @@ public class TypePlaintsController {
     }
 
     // POST
+    // Post one object
     @PostMapping("/addTypePlaints")
     public TypePlaints addTypePlaints(@RequestBody TypePlaints typePlaints) {
         return typePlaintsService.saveTypePlaints(typePlaints);
     }
 
+    // Post a list of types' plaints
     @PostMapping("/addTypesPlaints")
     public List<TypePlaints> addTypesPlaints(@RequestBody List<TypePlaints> typePlaints) {
         return typePlaintsService.saveTypesPlaints(typePlaints);
