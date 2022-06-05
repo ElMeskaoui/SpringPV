@@ -14,15 +14,17 @@ public class TypePlaintsService {
     private TypePlaintsRepository typePlaintsRepository;
 
     // GET methods
-
+    // Get a list of types' plaints
     public List<TypePlaints> getTypePlaints() {
         return typePlaintsRepository.findAll();
     }
 
+    // Get type's plaint by ID
     public TypePlaints getTypePlaintsById(int id) {
         return typePlaintsRepository.findById(id).orElse(null);
     }
 
+    // Get type's plaint by Name
     public TypePlaints getTypePlaintsByName(String name) {
         return typePlaintsRepository.findByName(name);
     }
