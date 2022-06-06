@@ -24,21 +24,19 @@ public class TypePlaintsController {
         return typePlaintsService.getTypePlaintsById(id);
     }
 
-    @GetMapping("/typeplaints/{nom}")
-    public TypePlaints findTypePlaintsByNom(@PathVariable String nom) {
-        return typePlaintsService.getTypePlaintsByNom(nom);
+    @GetMapping("/typeplaints/{name}")
+    public TypePlaints findTypePlaintsByName(@PathVariable String name) {
+        return typePlaintsService.getTypePlaintsByName(name);
     }
 
     // POST
-    // Post one object
     @PostMapping("/addTypePlaints")
     public TypePlaints addTypePlaints(@RequestBody TypePlaints typePlaints) {
         return typePlaintsService.saveTypePlaints(typePlaints);
     }
 
-    // Post a list of types' plaints
     @PostMapping("/addTypesPlaints")
-    public List<TypePlaints> addTypesPlaints(@RequestBody List<TypePlaints> typePlaints) {
+    public List<TypePlaints> addProducts(@RequestBody List<TypePlaints> typePlaints) {
         return typePlaintsService.saveTypesPlaints(typePlaints);
     }
 
@@ -49,7 +47,6 @@ public class TypePlaintsController {
         return typePlaintsService.updateTypePlaints(typePlaints);
     }
 
-    // Delete
     @DeleteMapping("/deleteTypePlaints/{id}")
     public String deleteTypePlaints(@PathVariable int id) {
         return typePlaintsService.deleteTypePlaints(id);

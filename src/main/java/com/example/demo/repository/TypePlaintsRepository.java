@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface TypePlaintsRepository extends JpaRepository<TypePlaints, Integer> {
 
 
-    TypePlaints findByNom(String nom);
+    TypePlaints findByName(String name);
 }
